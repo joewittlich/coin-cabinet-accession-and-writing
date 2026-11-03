@@ -2,7 +2,7 @@ This project is the companion enrichment desk. It is not the accession book and 
 
 Facts come only from the catalog.json object the user pastes and from the two photos. Never open or write CC-Accession-Register.xlsx. Never assign or change a CC number. Never change name, title, date, mint, mintmark, legends, module, denomination, catalog_ref, series, or status.
 
-Follow ENRICHMENT-PROJECT-BRIEF.md and SKILL.md. Schema authority is CATALOG-EXPORT-SPEC.md, spec cc-enrichment/v1 as amended F1–F6.
+Follow `docs/ENRICHMENT-PROJECT-BRIEF.md` and the `companion-catalog-enrichment` skill in `../skills/`. Schema authority is `docs/CATALOG-EXPORT-SPEC.md`, spec `cc-enrichment/v1` as amended F1–F6.
 
 Skills (use these; do not paste their full text):
 - companion-catalog-enrichment — workflow and schema

@@ -14,38 +14,42 @@ Do not combine these into one project. The enrichment project must not open or c
 ## Files in this package
 
 ```text
-coin-cabinet-ai-projects/
+coin-cabinet-accession-and-writing/
 ├── README.md
-├── cc-desk-methods/
-│   ├── CC-Accession-Register.xlsx
-│   ├── cc-catalog.json
+├── cc-accession-desk-control-files/
 │   ├── README.md
+│   ├── AGENTS.md
+│   ├── data/
+│   │   ├── CC-Accession-Register.xlsx   # Live collection data; review before sharing
+│   │   └── cc-catalog.json              # Empty sample export
 │   ├── docs/
-│   │   ├── AGENTS.md
 │   │   ├── CATALOG-EXPORT-SPEC.md
 │   │   ├── DESK-RULES.md
 │   │   ├── DESK-SPEC.md
 │   │   ├── FLIP-FORMAT.md
-│   │   └── NEW-COIN-PROMPT.md
-│   └── templates/
-│       └── REGISTER-STRUCTURE.md
+│   │   ├── NEW-COIN-PROMPT.md
+│   │   └── REGISTER-STRUCTURE.md
 ├── cc-enrichment-desk-control-files/
 │   ├── AGENTS.md
-│   ├── CATALOG-EXPORT-SPEC.md
-│   ├── ENRICHMENT-PROJECT-BRIEF.md
 │   ├── README.md
-│   ├── research-guide.md
-│   ├── research-sources.json
-│   └── historical-sources-for-enrichment.md
+│   ├── docs/
+│   │   ├── CATALOG-EXPORT-SPEC.md
+│   │   ├── ENRICHMENT-PROJECT-BRIEF.md
+│   │   ├── historical-sources-for-enrichment.md
+│   │   └── research-guide.md
+│   ├── data/
+│   │   └── cc-catalog.json             # Empty sample/template; supply the current export
+│   └── research/
+│       └── research-sources.json
 ├── skills/
-│   ├── ancient-coin-research-helper-byzantine/
-│   ├── ancient-coin-research-helper-general/
-│   ├── ancient-coin-research-helper-greek/
-│   ├── ancient-coin-research-helper-misc/
-│   ├── ancient-coin-research-helper-roman/
-│   ├── companion-catalog-enrichment/
-│   └── medieval-coin-research-helper/
-├── LICENSE
+│   ├── ancient-coin-research-helper-byzantine/SKILL.md
+│   ├── ancient-coin-research-helper-general/SKILL.md
+│   ├── ancient-coin-research-helper-greek/SKILL.md
+│   ├── ancient-coin-research-helper-misc/SKILL.md
+│   ├── ancient-coin-research-helper-roman/SKILL.md
+│   ├── companion-catalog-enrichment/SKILL.md
+│   └── medieval-coin-research-helper/SKILL.md
+└── LICENSE
 ```
 
 The six coin-research skills are shared by both workflows. The `companion-catalog-enrichment` skill is for the enrichment project only. Each skill's instructions are in its `SKILL.md`.
@@ -64,38 +68,38 @@ Platform features vary. Treat project instructions as operating rules, project k
 
 ### Project 1: Accession Desk
 
-**Project instructions:** Use [`cc-desk-methods/docs/AGENTS.md`](./cc-desk-methods/docs/AGENTS.md) as the core instructions. Also include [`DESK-SPEC.md`](./cc-desk-methods/docs/DESK-SPEC.md), [`DESK-RULES.md`](./cc-desk-methods/docs/DESK-RULES.md), [`FLIP-FORMAT.md`](./cc-desk-methods/docs/FLIP-FORMAT.md), [`NEW-COIN-PROMPT.md`](./cc-desk-methods/docs/NEW-COIN-PROMPT.md), and [`REGISTER-STRUCTURE.md`](./cc-desk-methods/templates/REGISTER-STRUCTURE.md) as project knowledge. The export contract is [`CATALOG-EXPORT-SPEC.md`](./cc-desk-methods/docs/CATALOG-EXPORT-SPEC.md).
+**Project instructions:** Use [`AGENTS.md`](./cc-accession-desk-control-files/AGENTS.md) as the core instructions. Add [`DESK-SPEC.md`](./cc-accession-desk-control-files/docs/DESK-SPEC.md), [`DESK-RULES.md`](./cc-accession-desk-control-files/docs/DESK-RULES.md), [`FLIP-FORMAT.md`](./cc-accession-desk-control-files/docs/FLIP-FORMAT.md), [`NEW-COIN-PROMPT.md`](./cc-accession-desk-control-files/docs/NEW-COIN-PROMPT.md), and [`REGISTER-STRUCTURE.md`](./cc-accession-desk-control-files/docs/REGISTER-STRUCTURE.md) as project knowledge. The export contract is [`CATALOG-EXPORT-SPEC.md`](./cc-accession-desk-control-files/docs/CATALOG-EXPORT-SPEC.md).
 
 **Skills to install:** `ancient-coin-research-helper-general`, `ancient-coin-research-helper-roman`, `ancient-coin-research-helper-greek`, `ancient-coin-research-helper-byzantine`, `medieval-coin-research-helper`, and `ancient-coin-research-helper-misc`.
 
 **Data and boundaries:**
 
-- The `cc-desk-methods` folder currently contains `CC-Accession-Register.xlsx`. Treat it as a live, potentially sensitive collection record. Do not upload the whole package or workbook to an AI service unless you have reviewed and explicitly authorized that use.
+- The `data/` folder contains `CC-Accession-Register.xlsx`. Treat it as a live, potentially sensitive collection record. Do not upload the whole package or workbook to an AI service unless you have reviewed and explicitly authorized that use.
 - If you choose to use an AI platform to read or update the register, make the authorized workbook available only to the private Accession Desk project. It is the source of truth; the Control sheet supplies the next number. Do not use chat memory to assign numbers.
-- If you do not want to upload the live register, use a separate blank workbook based on [`REGISTER-STRUCTURE.md`](./cc-desk-methods/templates/REGISTER-STRUCTURE.md); the AI cannot assign or verify the actual next number without access to the authoritative Control sheet.
+- If you do not want to upload the live register, use a separate blank workbook based on [`REGISTER-STRUCTURE.md`](./cc-accession-desk-control-files/docs/REGISTER-STRUCTURE.md); the AI cannot assign or verify the actual next number without access to the authoritative Control sheet.
 - The project may analyze coin photos attached for the task. Follow the desk rules about not retaining those images in the project workspace.
 - Let the assistant draft the identification and flip first. It must ask “Proceed with accession of CC-00xx?” and wait for an affirmative response before writing the register.
 - After a write, require the assistant to recalculate and verify the row and next number before reporting success.
 - Export only when explicitly requested. Use the export contract; do not generate enrichment files during accession or export.
 
-**Start a task:** Use the template in [`NEW-COIN-PROMPT.md`](./cc-desk-methods/docs/NEW-COIN-PROMPT.md). For an export, explicitly ask for the on-demand catalog export described in the export spec.
+**Start a task:** Use the template in [`NEW-COIN-PROMPT.md`](./cc-accession-desk-control-files/docs/NEW-COIN-PROMPT.md). For an export, explicitly ask for the on-demand catalog export described in the export spec.
 
 ### Project 2: Companion Enrichment Desk
 
-**Project instructions:** Use [`cc-enrichment-desk-control-files/AGENTS.md`](./cc-enrichment-desk-control-files/AGENTS.md) as the core instructions. Add [`ENRICHMENT-PROJECT-BRIEF.md`](./cc-enrichment-desk-control-files/ENRICHMENT-PROJECT-BRIEF.md) and [`CATALOG-EXPORT-SPEC.md`](./cc-enrichment-desk-control-files/CATALOG-EXPORT-SPEC.md) as project knowledge. The [companion enrichment skill](./skills/companion-catalog-enrichment/SKILL.md) contains the detailed workflow.
+**Project instructions:** Use [`AGENTS.md`](./cc-enrichment-desk-control-files/AGENTS.md) as the core instructions. Add [`ENRICHMENT-PROJECT-BRIEF.md`](./cc-enrichment-desk-control-files/docs/ENRICHMENT-PROJECT-BRIEF.md) and [`CATALOG-EXPORT-SPEC.md`](./cc-enrichment-desk-control-files/docs/CATALOG-EXPORT-SPEC.md) as project knowledge. The [companion enrichment skill](./skills/companion-catalog-enrichment/SKILL.md) contains the detailed workflow. Research references are in `docs/` and `research/`.
 
 **Skills to install:** `companion-catalog-enrichment` and the six coin-research skills listed above. Route to the coin skill matching the catalog's `series` value; use the general skill if the series is unclear.
 
-**Data and boundaries:**
+**Input and boundaries:**
 
-- Give the project one catalog object (or a catalog file and the target ID) and the matching obverse and reverse photos.
+- Give the project one catalog object from the current accession export (or a populated catalog file and the target ID) and the matching obverse and reverse photos. The checked-in `data/cc-catalog.json` is an empty sample, not the live catalog.
 - The supplied catalog facts are locked. If the photos appear to contradict them, stop and send the coin back to the Accession Desk rather than silently re-identifying it.
 - Draft and show the JSON first. The assistant must ask “Proceed with enrichment of CC-00xx?” and wait for confirmation before writing `enrichment/CC-00xx.json`.
 - On confirmation, the file uses `cc-enrichment/v1`, `status: "Ready"`, and `stale: false`. This desk must never set `status` to `complete`.
 - Never provide the accession workbook to this project. It does not assign numbers, export the catalog, build or deploy the website, or include dealer, price, recipient, or private desk notes in enrichment.
 - `CC-0018` is held as a schema-test piece; do not enrich it unless that hold has been lifted.
 
-The enrichment prompt and confirmation steps are in [`ENRICHMENT-PROJECT-BRIEF.md`](./cc-enrichment-desk-control-files/ENRICHMENT-PROJECT-BRIEF.md).
+The enrichment prompt and confirmation steps are in [`ENRICHMENT-PROJECT-BRIEF.md`](./cc-enrichment-desk-control-files/docs/ENRICHMENT-PROJECT-BRIEF.md).
 
 ## Normal handoff between projects
 
@@ -108,8 +112,8 @@ The enrichment prompt and confirmation steps are in [`ENRICHMENT-PROJECT-BRIEF.m
 ## Notes
 
 - The export and enrichment specs define the data contracts. Where project notes or an AI's memory disagree with the current spec or accession register, follow the applicable authority named above.
-- [`research-guide.md`](./cc-enrichment-desk-control-files/research-guide.md) provides a standalone, optional research workflow for the Companion Enrichment Desk; it requires no local scripts or separate research repository. [`research-sources.json`](./cc-enrichment-desk-control-files/research-sources.json) is an optional source directory.
-- The accession-methods folder contains a second, nested `AGENTS.md` copy at `cc-desk-methods/cc-desk-methods/docs/AGENTS.md`. Use the canonical [`docs/AGENTS.md`](./cc-desk-methods/docs/AGENTS.md) linked above and do not upload the nested copy.
+- [`research-guide.md`](./cc-enrichment-desk-control-files/docs/research-guide.md) provides a standalone, optional research workflow for the Companion Enrichment Desk; it requires no local scripts or separate research repository. [`research-sources.json`](./cc-enrichment-desk-control-files/research/research-sources.json) is an optional source directory.
+- An older accession instruction copy is retained at `cc-accession-desk-control-files/docs/archive/AGENTS-legacy.md` for reference only. Use the root [`AGENTS.md`](./cc-accession-desk-control-files/AGENTS.md) as the active instructions.
 - These files define workflows, not a guarantee of any platform's capabilities. Always review proposed identifications, research, and file changes.
 
 ## License

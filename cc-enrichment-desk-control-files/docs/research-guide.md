@@ -4,10 +4,10 @@ Use this guide to research an already-catalogued coin while drafting its compani
 
 ## What to have in the project
 
-- `AGENTS.md`, `ENRICHMENT-PROJECT-BRIEF.md`, and `CATALOG-EXPORT-SPEC.md`
+- `../AGENTS.md`, `ENRICHMENT-PROJECT-BRIEF.md`, and `CATALOG-EXPORT-SPEC.md`
 - The `companion-catalog-enrichment` skill and the coin-research skill matching the coin's `series`
 - `historical-sources-for-enrichment.md` as a general source directory
-- `research-sources.json` as an optional set of topic lanes, source leads, and access cautions
+- `../research/research-sources.json` as an optional set of topic lanes, source leads, and access cautions
 - For each task: the coin's catalog object, obverse and reverse photos, and optionally an existing enrichment draft
 
 The source directory and JSON index are starting points, not required software or evidence. If either is unavailable, follow the source priorities below and search and open sources directly.
@@ -47,7 +47,7 @@ Start with the coin's named standard catalogue or corpus, then consult the match
 4. **Economics and monetary context:** scholarly studies, primary price or wage evidence, and specialist numismatic work. Record date, place, and unit for any figure.
 5. **Iconography and culture:** specialist numismatic or art-historical studies, primary texts where relevant, and reputable museum catalogues.
 
-Use `research-sources.json` to find candidate sources by lane or topic. Its source titles, URLs, `use_for` descriptions, and `access_note` fields are discovery aids only. A listed source may be unavailable, may cover only a landing page, or may not support the proposed claim. Verify the exact relevant page or passage yourself. Do not assume its period routes are exhaustive.
+Use `../research/research-sources.json` to find candidate sources by lane or topic. Its source titles, URLs, `use_for` descriptions, and `access_note` fields are discovery aids only. A listed source may be unavailable, may cover only a landing page, or may not support the proposed claim. Verify the exact relevant page or passage yourself. Do not assume its period routes are exhaustive.
 
 Use secondary or general reference sources to orient a question, not as substitutes for a relevant coin corpus or primary evidence. Wikipedia may be used for the person's life when the enrichment schema calls for it, but open the article and do not rely on it alone for disputed or specialist claims.
 

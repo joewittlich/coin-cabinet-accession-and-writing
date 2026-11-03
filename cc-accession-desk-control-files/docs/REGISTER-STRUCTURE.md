@@ -51,11 +51,11 @@ Live second catalog numbers stay in `notes` as prose. No extra columns.
 
 ### FlipFormat
 
-Authoritative line order for the public flip (see `docs/FLIP-FORMAT.md`).
+Authoritative line order for the public flip (see `FLIP-FORMAT.md`).
 
 ### DeskRules
 
-Digest of operating rules (see `docs/DESK-RULES.md`).
+Digest of operating rules (see `DESK-RULES.md`).
 
 ## Seed
 

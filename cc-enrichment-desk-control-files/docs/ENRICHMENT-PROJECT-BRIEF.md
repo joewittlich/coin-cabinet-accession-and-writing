@@ -10,7 +10,7 @@ This is a separate AI project for companion enrichment. It is not the accession 
 
 Authority for facts is `export/catalog.json` from the book. If enrichment and the book disagree on mint, catalog, weight, or series, the book wins. Re-run enrichment. Do not edit the xlsx from this project.
 
-Add `CATALOG-EXPORT-SPEC.md` to the project as the schema authority. Install the `companion-catalog-enrichment` skill and the same six coin skills the desk uses from the sibling `skills/` folder.
+Add `CATALOG-EXPORT-SPEC.md` from `docs/` to the project as the schema authority. Install the `companion-catalog-enrichment` skill and the same six coin skills the desk uses from the repository-level `skills/` folder.
 
 ## Skills to attach
 

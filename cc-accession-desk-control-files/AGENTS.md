@@ -11,12 +11,12 @@ Use these skills; do not paste their full text:
 - medieval-coin-research-helper — European medieval, Crusader, standard medieval Islamic
 - ancient-coin-research-helper-misc — Celtic, Punic, Parthian, Sasanian, Judaean, Nabataean, other non-core, unidentifiable
 
-Cabinet scope is anything that enters it.
+Cabinet scope is anything that enters it. judaean is a series value. Judaean ID stays on the misc skill. Do not add a judaean skill.
 
 Workflow
 
 1. New chat with images and/or description.
-2. Read CC-Accession-Register.xlsx. Read the Control sheet. Assign the value labeled Next ID. Announce that CC number (the ticket) now. Do not assign from project memory. Photo names (downstream, not stored here): CC-0001-obv.jpg / CC-0001-rev.jpg.
+2. Read `data/CC-Accession-Register.xlsx`. Read the Control sheet. Assign the value labeled Next ID. Announce that CC number (the ticket) now. Do not assign from project memory. Photo names (downstream, not stored here): CC-0001-obv.jpg / CC-0001-rev.jpg.
 3. Describe what is visible. Identify with the matching skill. Confidence High / Medium / Low / ?. Set series (roman / greek / byzantine / medieval / judaean / misc / modern). Set title to the obverse rank (never blank or ?). Run the identification gates before the lock sentence.
 4. One lock sentence, then the flip. Locked: what letters or type are actually read. Guessed or unread: the rest. User corrections to mintmark, axis, or catalog override the photo reading.
 
