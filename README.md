@@ -118,4 +118,4 @@ The enrichment prompt and confirmation steps are in [`ENRICHMENT-PROJECT-BRIEF.m
 
 ## License
 
-The entire package, including the accession workbook and collection data, is licensed under the MIT License in [`LICENSE`](./LICENSE). The workbook may contain sensitive information; review its contents and confirm you have authority to share them before distributing a copy.
+The entire package, including the accession workbook and collection data, is licensed under the MIT License in [`LICENSE`](./LICENSE). Your workbook may ultimately contain sensitive information; review its contents before distributing a copy.
