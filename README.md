@@ -109,6 +109,20 @@ The enrichment prompt and confirmation steps are in [`ENRICHMENT-PROJECT-BRIEF.m
 4. Review the proposed enrichment and confirm before the assistant writes the JSON.
 5. Treat the website repository as a separate downstream system; this package does not publish or deploy the site.
 
+## How to use
+
+### Accession and identification
+
+For each new coin, start a chat in the Accession Desk and provide the coin's weight, measurements, die axis, and your description of the coin in hand, along with clear obverse and reverse photos. Ask the desk to assess the evidence and return its best-supported attribution, including uncertainty or alternatives where appropriate.
+
+Treat that attribution as a research lead, not a finished identification. Research the suggested attributions yourself, then provide any corrected readings, additional evidence, and more detailed descriptions of the coin. Work with the desk to refine the identification and the proposed register entry. Computer-vision identification is not reliable enough to use as the basis for attribution; do not rely on the AI to identify a coin from its pictures alone.
+
+When the identification and entry are ready, review the flip and register row. The desk must wait for your explicit confirmation before writing the accession to the register, then verify the saved entry and next ID.
+
+### Companion enrichment
+
+After accession, request a catalog export from the Accession Desk. Move the current export and the matching coin photos to the Companion Enrichment Desk; do not give that project the accession workbook. Start an item with a request such as **“Begin enrichment CC-00xx.”** You can request a batch of up to 10 coins, supplying each coin's catalog record and matching photos. The desk prepares a separate JSON file for each coin. Review each draft and confirm before its file is written.
+
 ## Notes
 
 - The export and enrichment specs define the data contracts. Where project notes or an AI's memory disagree with the current spec or accession register, follow the applicable authority named above.
