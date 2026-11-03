@@ -1,0 +1,416 @@
+{
+  "format": "coin-cabinet.enrichment-research-sources/v1",
+  "package": "Coin Cabinet enrichment research sources",
+  "assembled_on": "2026-11-03",
+  "purpose": "Optional source directory for finding and verifying evidence while drafting coin companion enrichment. Source entries are leads, not evidence; open and verify the relevant source before relying on it.",
+  "use_rules": [
+    "Start with the supplied catalog object and current enrichment draft; research only claims needed for the visitor-facing writeup.",
+    "Start with the coin's own catalogue reference, then prefer a primary text, standard catalogue, or specialist numismatic database that directly covers the claim.",
+    "Use this package as a shortlist, not as evidence. Browse the relevant source page, record, text, or scan and verify the exact support for each factual claim.",
+    "A source title, URL, or listed status is not evidence by itself. Do not cite a source unless its relevant content was opened and checked.",
+    "Period routes are starting points, not complete coverage. Search directly for a more specific specialist source when needed; do not treat a general source as a coin-type authority.",
+    "Do not use search snippets, auction descriptions, dealer prices, or acquisition data as evidence.",
+    "After two failed attempts to access a source for a claim, stop retrying; use another source, qualify the claim from available evidence, or omit it.",
+    "Keep temporary claim-to-source notes in the chat or working draft. No separate facts ledger or source registry is required.",
+    "Use primary or standard references for strong claims; qualify claims based only on secondary or fallback sources; omit unsupported or contradicted claims."
+  ],
+  "source_lanes": [
+    {
+      "id": "coin-attribution-and-type",
+      "purpose": "Confirm attribution, type, legend, date, mint, denomination, and catalogue-reference variants.",
+      "source_ids": [
+        "rpc-online",
+        "ocre",
+        "doc-byzantine",
+        "metcalf-crusades",
+        "walker-umayyad",
+        "corpus-nummorum",
+        "ikmk-berlin",
+        "wildwinds"
+      ],
+      "priority_note": "Use the coin's own named catalogue reference first when available. Use Wildwinds as a cross-check or lead; its specimen weights are tier B and must not be lifted from auction descriptions."
+    },
+    {
+      "id": "ancient-and-medieval-texts",
+      "purpose": "Find primary textual context for named rulers, events, titles, religious references, and motifs.",
+      "source_ids": [
+        "perseus",
+        "thayer",
+        "wikisource",
+        "newadvent",
+        "fordham",
+        "attalus"
+      ],
+      "priority_note": "Use the exact work, book, and chapter locator. Open the text itself; do not infer a passage from a site's general coverage."
+    },
+    {
+      "id": "judaean-and-scriptural-context",
+      "purpose": "Check Jewish texts, biblical passages, and relevant provincial coin types.",
+      "source_ids": [
+        "rpc-online",
+        "sefaria",
+        "bible-api",
+        "perseus",
+        "wikisource",
+        "meshorer-jewish-coinage"
+      ],
+      "priority_note": "Separate a text's date and genre from the date of the coin. The Meshorer entry is a lead to a lending copy, not a directly read source."
+    },
+    {
+      "id": "money-wages-and-prices",
+      "purpose": "Support monetary-system, metal, wage, price, tax, and relative-purchasing-power claims.",
+      "source_ids": [
+        "edict-max-prices",
+        "hendy-monetary-economy",
+        "morrisson-cheynet",
+        "gpih",
+        "papyri-info",
+        "sefaria",
+        "bible-api",
+        "archive-org"
+      ],
+      "priority_note": "Record the place, date, unit, and source for each number. Use relative comparisons only; do not convert to modern currency. Treat OCR and reconstructed series cautiously and record the calculation or estimate basis."
+    },
+    {
+      "id": "museum-and-open-catalogue-records",
+      "purpose": "Cross-check individual specimens, object metadata, and accessible catalogue scans.",
+      "source_ids": [
+        "ikmk-berlin",
+        "british-museum",
+        "doaks",
+        "archive-org"
+      ],
+      "priority_note": "The British Museum and Dumbarton Oaks sites have recorded scripted-fetch 403 errors. Use the specified open catalogue scans when available; do not assume a landing page was read."
+    },
+    {
+      "id": "ruler-and-place-context",
+      "purpose": "Orient a claim about a ruler, city, or historical sequence before checking it against stronger evidence.",
+      "source_ids": [
+        "livius",
+        "britannica-wayback",
+        "wikipedia"
+      ],
+      "priority_note": "These are secondary/fallback leads, not substitutes for a primary text or standard coin catalogue. Keep claims hedged at tier B unless independently supported."
+    }
+  ],
+  "period_routes": {
+    "P01": ["perseus", "attalus", "sco", "corpus-nummorum", "ikmk-berlin", "wildwinds"],
+    "P02": ["perseus", "attalus", "pco", "ikmk-berlin", "archive-org", "wildwinds"],
+    "P03": ["perseus", "livius", "bible-api", "wildwinds"],
+    "P04": ["rpc-online", "sefaria", "bible-api", "wikisource", "perseus", "meshorer-jewish-coinage"],
+    "P05": ["ocre", "rpc-online", "perseus", "thayer", "wikisource", "papyri-info", "gpih"],
+    "P06": ["ocre", "rpc-online", "thayer", "papyri-info", "wildwinds"],
+    "P07": ["ocre", "rpc-online", "edict-max-prices", "perseus"],
+    "P08": ["ocre", "edict-max-prices", "thayer", "archive-org"],
+    "P09": ["ocre", "newadvent", "papyri-info", "archive-org"],
+    "P10": ["ocre", "newadvent", "thayer", "archive-org"],
+    "P11": ["doc-byzantine", "ikmk-berlin", "thayer", "hendy-monetary-economy"],
+    "P12": ["doc-byzantine", "fordham", "hendy-monetary-economy"],
+    "P13": ["doc-byzantine", "fordham", "hendy-monetary-economy", "archive-org"],
+    "P14": ["walker-umayyad", "archive-org", "britannica-wayback"],
+    "P15": ["metcalf-crusades", "fordham", "archive-org", "wildwinds"],
+    "P16": ["gpih", "archive-org", "britannica-wayback", "wikisource"]
+  },
+  "sources": [
+    {
+      "id": "rpc-online",
+      "title": "Roman Provincial Coinage Online (RPC)",
+      "url": "https://rpc.ashmus.ox.ac.uk/",
+      "kind": "database",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Provincial types, dating, metal, average diameter and average weight; especially Judaea, Alexandria, Balkan, and Anatolian mints.",
+      "access_note": "Locate and open the specific coin type record. Denomination and fineness are not consistently supplied."
+    },
+    {
+      "id": "ocre",
+      "title": "Online Coins of the Roman Empire (OCRE)",
+      "url": "https://numismatics.org/ocre/",
+      "kind": "database",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "RIC type identifiers, dates, and reported average weights and diameters for Roman imperial coinage.",
+      "access_note": "Registry has recorded intermittent 503 responses; if a type page fails, use a listed alternate and record the failure."
+    },
+    {
+      "id": "doc-byzantine",
+      "title": "Catalogue of the Byzantine Coins in the Dumbarton Oaks Collection and in the Whittemore Collection (DOC), vols. 1, 3.2, 4",
+      "url": "https://archive.org/details/docoins-1",
+      "kind": "catalogue",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Byzantine types, dates, monetary reforms, denominations, and selected metrology across DOC volumes 1, 3.2, and 4.",
+      "access_note": "Use registry volume-specific scan/text patterns. OCR tables can be scrambled; verify readings against the scan."
+    },
+    {
+      "id": "metcalf-crusades",
+      "title": "D. M. Metcalf, Coinage of the Crusades and the Latin East in the Ashmolean Museum, Oxford (RNS Special Publication 15, 1983)",
+      "url": "https://archive.org/download/metcalf-coinage-of-the-crusades/Metcalf%20Coinage%20of%20the%20Crusades_djvu.txt",
+      "kind": "catalogue",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Crusader and Latin East coinage, including Antioch and Cyprus types, references, and catalogue weights.",
+      "access_note": "The open OCR is useful but can garble numerals; confirm a consequential number against the printed page."
+    },
+    {
+      "id": "walker-umayyad",
+      "title": "Walker, Catalogue of the Muhammadan Coins in the British Museum (vol. 1, 1941, Arab-Sassanian) and Catalogue of the Arab-Byzantine and Post-Reform Umaiyad Coins (vol. 2, 1956)",
+      "url": "https://archive.org/download/in.ernet.dli.2015.279267/2015.279267.A-Catalogue_djvu.txt",
+      "kind": "catalogue",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Early Islamic and Arab-Byzantine coinage, reform chronology, metrology, and catalogue context.",
+      "access_note": "Registry covers open text files and OCR limits; introduction-level metrology is more reliable than scrambled catalogue tables."
+    },
+    {
+      "id": "wildwinds",
+      "title": "Wildwinds",
+      "url": "https://www.wildwinds.com/coins/",
+      "kind": "database",
+      "registry_status": "verified",
+      "tier_ceiling": "B",
+      "use_for": "Broad type descriptions, references, and cross-checking across ancient and medieval series.",
+      "access_note": "Secondary lead only. Specimen weights are tier B; never use auction descriptions, dealer prices, or linked sale information."
+    },
+    {
+      "id": "corpus-nummorum",
+      "title": "Corpus Nummorum",
+      "url": "https://www.corpus-nummorum.eu/",
+      "kind": "database",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Greek civic coin types, especially Thrace and Moesia.",
+      "access_note": "Registry has not verified a specific type page or weight; use only after opening the relevant record."
+    },
+    {
+      "id": "ikmk-berlin",
+      "title": "Berlin Münzkabinett (IKMK)",
+      "url": "https://ikmk.smb.museum/",
+      "kind": "database",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Museum specimen records, object weights, and catalogue references.",
+      "access_note": "This is a source lead only. Locate and inspect the specific object record before citing."
+    },
+    {
+      "id": "sco",
+      "title": "Seleucid Coins Online (SCO)",
+      "url": "https://numismatics.org/sco/",
+      "kind": "database",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Seleucid type attribution and chronology, alongside Houghton and Lorber references.",
+      "access_note": "Known 503 responses; treat as unavailable until the specific type page is opened."
+    },
+    {
+      "id": "pco",
+      "title": "Ptolemaic Coins Online (PCO)",
+      "url": "https://numismatics.org/pco/",
+      "kind": "database",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Ptolemaic type attribution and chronology, alongside Lorber references.",
+      "access_note": "Known 503 responses for the root and a sample record; treat as unavailable until the specific type page is opened."
+    },
+    {
+      "id": "perseus",
+      "title": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Greek and Latin primary texts, including Polybius, Pliny, Suetonius, Josephus, Livy, and Plutarch.",
+      "access_note": "Use exact work/chapter references; registry lists absent works and passages that did not resolve."
+    },
+    {
+      "id": "thayer",
+      "title": "LacusCurtius, Penelope (Bill Thayer)",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Roman and Byzantine-era authors including Suetonius, Cassius Dio, Herodian, Procopius, and Ammianus.",
+      "access_note": "Recent connections to some pages failed or timed out; confirm live access and use the exact work locator."
+    },
+    {
+      "id": "wikisource",
+      "title": "Wikisource",
+      "url": "https://en.wikisource.org/wiki/",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Tacitus, Lactantius, Procopius, and other open historical texts.",
+      "access_note": "Registry lists available texts and known absent works; cite the work, book, and chapter."
+    },
+    {
+      "id": "newadvent",
+      "title": "New Advent, Church Fathers",
+      "url": "https://www.newadvent.org/fathers/",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Eusebius, Lactantius, Irenaeus, Sozomen, and Ambrose, including Life of Constantine.",
+      "access_note": "Use a specific book and chapter, and confirm the passage is present on the page you opened."
+    },
+    {
+      "id": "fordham",
+      "title": "Internet History Sourcebooks (Fordham)",
+      "url": "https://sourcebooks.fordham.edu/",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Byzantine and Crusader-era sources, including Anna Komnene and First Crusade chronicles.",
+      "access_note": "Some pages fail or omit the relevant passage; open the cited translation and locate the exact passage."
+    },
+    {
+      "id": "attalus",
+      "title": "Attalus",
+      "url": "https://www.attalus.org/",
+      "kind": "primary-text",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Hellenistic and Roman source excerpts.",
+      "access_note": "This is a source lead only. Verify the exact source passage before use."
+    },
+    {
+      "id": "sefaria",
+      "title": "Sefaria (Mishnah, Tosefta, Talmud)",
+      "url": "https://www.sefaria.org/",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Judaean monetary, wage, price, and tax context in named Jewish texts.",
+      "access_note": "Open the relevant text and identify its edition or translation; do not conflate versions or commentary."
+    },
+    {
+      "id": "bible-api",
+      "title": "bible-api.com",
+      "url": "https://bible-api.com/",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Specific biblical passages about wages, prices, taxes, and coin references.",
+      "access_note": "Identify the translation used and record the exact book, chapter, and verse."
+    },
+    {
+      "id": "edict-max-prices",
+      "title": "Diocletian, Edict on Maximum Prices (Kent 1920, Allen 2007, Abbott 1911, Mommsen 1851 readings)",
+      "url": "https://archive.org/download/jstor-3314009/3314009_djvu.txt",
+      "kind": "primary-text",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "The 301 CE price and wage schedule and its preamble.",
+      "access_note": "Record the edition or reading and line or item number; check for variant readings and missing text."
+    },
+    {
+      "id": "hendy-monetary-economy",
+      "title": "Hendy, Studies in the Byzantine Monetary Economy c. 300-1450 (Cambridge, 1985)",
+      "url": "https://archive.org/details/studies-in-the-byzantine-monetary-economy-c.-300-1450",
+      "kind": "scholarly",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Byzantine monetary reforms, weights, metal fineness, wage/pay context, and denomination relationships.",
+      "access_note": "Large OCR text has number and fraction errors; confirm important figures against the cited printed page/table."
+    },
+    {
+      "id": "morrisson-cheynet",
+      "title": "Morrisson and Cheynet, Prices and Wages in the Byzantine World, in Laiou (ed.), The Economic History of Byzantium (Dumbarton Oaks, 2002), ch. 12, pp. 815-871",
+      "url": "https://archive.org/details/economicbizant",
+      "kind": "scholarly",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Byzantine price and wage evidence, with period-specific references.",
+      "access_note": "Locate the exact item and page in the collection; this landing URL alone is not a passage locator."
+    },
+    {
+      "id": "gpih",
+      "title": "Global Price and Income History Group (UC Davis)",
+      "url": "https://gpih.ucdavis.edu/",
+      "kind": "scholarly",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Published historical wage and price series, including Istanbul, Sopron, and Vienna datasets.",
+      "access_note": "Name the dataset, place, date range, and units. Do not equate a series directly with an individual coin's purchasing power."
+    },
+    {
+      "id": "papyri-info",
+      "title": "Papyri.info",
+      "url": "https://www.papyri.info/",
+      "kind": "primary-text",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Documentary evidence for Egyptian wages, prices, tax receipts, and pay statements.",
+      "access_note": "Registry reports an anti-bot challenge on sampled pages; no claim is supported until the document itself is read."
+    },
+    {
+      "id": "archive-org",
+      "title": "Internet Archive",
+      "url": "https://archive.org/",
+      "kind": "scholarly",
+      "registry_status": "verified",
+      "tier_ceiling": "A",
+      "use_for": "Open scans and text editions of specialist catalogues and scholarly works.",
+      "access_note": "Access varies by item; many listed books are borrow-only. Verify the specific item, edition, and page."
+    },
+    {
+      "id": "british-museum",
+      "title": "British Museum collection online",
+      "url": "https://www.britishmuseum.org/collection",
+      "kind": "database",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Individual museum specimen records and object metadata.",
+      "access_note": "Registry reports 403 to scripted fetches; do not treat an unvisited record as verified."
+    },
+    {
+      "id": "doaks",
+      "title": "Dumbarton Oaks Byzantine coins resources",
+      "url": "https://www.doaks.org/resources/coins",
+      "kind": "database",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "DOC catalogue orientation and Byzantine coin resources.",
+      "access_note": "Registry reports 403; use the relevant Internet Archive DOC scan and follow its volume-specific access notes."
+    },
+    {
+      "id": "livius",
+      "title": "Livius.org",
+      "url": "https://www.livius.org/",
+      "kind": "secondary",
+      "registry_status": "verified",
+      "tier_ceiling": "B",
+      "use_for": "Ruler, place, and chronology orientation for the ancient world.",
+      "access_note": "Secondary context only; some person URLs return incomplete pages. Confirm factual claims with a stronger source."
+    },
+    {
+      "id": "britannica-wayback",
+      "title": "Encyclopaedia Britannica (Wayback copies)",
+      "url": "https://web.archive.org/",
+      "kind": "fallback",
+      "registry_status": "verified",
+      "tier_ceiling": "B",
+      "use_for": "Fallback ruler and place summaries where stronger sources are unavailable.",
+      "access_note": "Find the exact archived article and snapshot. Direct Britannica access and some archived articles fail."
+    },
+    {
+      "id": "meshorer-jewish-coinage",
+      "title": "Meshorer, Ancient Jewish Coinage and A Treasury of Jewish Coins",
+      "url": "https://archive.org/details/treasuryofjewish0000mesh",
+      "kind": "catalogue",
+      "registry_status": "lead",
+      "tier_ceiling": "A",
+      "use_for": "Hasmonean, Herodian, and prefect coin types and denomination references.",
+      "access_note": "Registry records a lending copy that was not opened; do not cite claims from this entry without reading the relevant pages."
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia",
+      "url": "https://en.wikipedia.org/",
+      "kind": "fallback",
+      "registry_status": "verified",
+      "tier_ceiling": "B",
+      "use_for": "Last-resort orientation or a fallback claim when no better source is reachable.",
+      "access_note": "Use only after trying a primary or standard source; open the article text, verify the cited material, and hedge at tier B."
+    }
+  ]
+}

@@ -11,12 +11,13 @@ AGENTS.md                      project instructions
 CATALOG-EXPORT-SPEC.md         schema authority (cc-catalog-export/v1, cc-enrichment/v1)
 ENRICHMENT-PROJECT-BRIEF.md    stand-up brief and paste prompts
 historical-sources-for-enrichment.md
-grok-upstream-guide.md
+research-guide.md
+research-sources.json
 ```
 
 The skill folders are stored in the sibling `../skills/` directory, not in this control-files folder. Add the companion enrichment skill and the applicable coin-research skill from there to the AI project.
 
-`grok-upstream-guide.md` is optional and applies only when you also have the separate Grok research repository, source index, and scripts it references. It is not required for the standard enrichment workflow.
+`research-guide.md` is a standalone, optional workflow for evidence-backed enrichment. It uses ordinary web browsing and the project files; no local scripts, research repository, or facts ledger are required. `research-sources.json` is an optional directory of source leads to consult alongside it.
 
 ## Status
 

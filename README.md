@@ -34,7 +34,8 @@ coin-cabinet-ai-projects/
 │   ├── CATALOG-EXPORT-SPEC.md
 │   ├── ENRICHMENT-PROJECT-BRIEF.md
 │   ├── README.md
-│   ├── grok-upstream-guide.md
+│   ├── research-guide.md
+│   ├── research-sources.json
 │   └── historical-sources-for-enrichment.md
 ├── skills/
 │   ├── ancient-coin-research-helper-byzantine/
@@ -107,7 +108,7 @@ The enrichment prompt and confirmation steps are in [`ENRICHMENT-PROJECT-BRIEF.m
 ## Notes
 
 - The export and enrichment specs define the data contracts. Where project notes or an AI's memory disagree with the current spec or accession register, follow the applicable authority named above.
-- [`grok-upstream-guide.md`](./cc-enrichment-desk-control-files/grok-upstream-guide.md) describes an optional integration with a separate research repository and scripts that are not included here; it is not needed for the standard enrichment workflow.
+- [`research-guide.md`](./cc-enrichment-desk-control-files/research-guide.md) provides a standalone, optional research workflow for the Companion Enrichment Desk; it requires no local scripts or separate research repository. [`research-sources.json`](./cc-enrichment-desk-control-files/research-sources.json) is an optional source directory.
 - The accession-methods folder contains a second, nested `AGENTS.md` copy at `cc-desk-methods/cc-desk-methods/docs/AGENTS.md`. Use the canonical [`docs/AGENTS.md`](./cc-desk-methods/docs/AGENTS.md) linked above and do not upload the nested copy.
 - These files define workflows, not a guarantee of any platform's capabilities. Always review proposed identifications, research, and file changes.
 
