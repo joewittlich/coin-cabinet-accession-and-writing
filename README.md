@@ -15,41 +15,41 @@ Do not combine these into one project. The enrichment project must not open or c
 
 ```text
 coin-cabinet-accession-and-writing/
-├── README.md
+├── README.md                                           # Package overview and setup guide
 ├── cc-accession-desk-control-files/
-│   ├── README.md
-│   ├── AGENTS.md
+│   ├── README.md                                       # Accession desk setup and workflow
+│   ├── AGENTS.md                                       # Active accession project instructions
 │   ├── data/
-│   │   ├── CC-Accession-Register.xlsx   # Live collection data; review before sharing
-│   │   └── cc-catalog.json              # Empty sample export
+│   │   ├── CC-Accession-Register.xlsx                  # Authoritative live register; sensitive data
+│   │   └── cc-catalog.json                             # Empty sample catalog export
 │   ├── docs/
-│   │   ├── CATALOG-EXPORT-SPEC.md
-│   │   ├── DESK-RULES.md
-│   │   ├── DESK-SPEC.md
-│   │   ├── FLIP-FORMAT.md
-│   │   ├── NEW-COIN-PROMPT.md
-│   │   └── REGISTER-STRUCTURE.md
+│   │   ├── CATALOG-EXPORT-SPEC.md                      # Catalog export schema and handoff contract
+│   │   ├── DESK-RULES.md                               # Accession rules and safeguards
+│   │   ├── DESK-SPEC.md                                # Detailed accession desk workflow
+│   │   ├── FLIP-FORMAT.md                              # Required format for public coin flips
+│   │   ├── NEW-COIN-PROMPT.md                          # Reusable prompt for new coin intake
+│   │   └── REGISTER-STRUCTURE.md                       # Workbook structure for a blank register
 ├── cc-enrichment-desk-control-files/
-│   ├── AGENTS.md
-│   ├── README.md
+│   ├── AGENTS.md                                       # Active enrichment project instructions
+│   ├── README.md                                       # Enrichment desk setup and workflow
 │   ├── docs/
-│   │   ├── CATALOG-EXPORT-SPEC.md
-│   │   ├── ENRICHMENT-PROJECT-BRIEF.md
-│   │   ├── historical-sources-for-enrichment.md
-│   │   └── research-guide.md
+│   │   ├── CATALOG-EXPORT-SPEC.md                      # Catalog and enrichment data contract
+│   │   ├── ENRICHMENT-PROJECT-BRIEF.md                 # Enrichment workflow and prompt templates
+│   │   ├── historical-sources-for-enrichment.md        # Historical context and source guidance
+│   │   └── research-guide.md                           # Standalone research and citation method
 │   ├── data/
-│   │   └── cc-catalog.json             # Empty sample/template; supply the current export
+│   │   └── cc-catalog.json                             # Empty sample; replace with current export
 │   └── research/
-│       └── research-sources.json
+│       └── research-sources.json                       # Optional starting points for research
 ├── skills/
-│   ├── ancient-coin-research-helper-byzantine/SKILL.md
-│   ├── ancient-coin-research-helper-general/SKILL.md
-│   ├── ancient-coin-research-helper-greek/SKILL.md
-│   ├── ancient-coin-research-helper-misc/SKILL.md
-│   ├── ancient-coin-research-helper-roman/SKILL.md
-│   ├── companion-catalog-enrichment/SKILL.md
-│   └── medieval-coin-research-helper/SKILL.md
-└── LICENSE
+│   ├── ancient-coin-research-helper-byzantine/SKILL.md # Byzantine coin research workflow
+│   ├── ancient-coin-research-helper-general/SKILL.md   # General research for unclear series
+│   ├── ancient-coin-research-helper-greek/SKILL.md     # Greek civic and Hellenistic coin research
+│   ├── ancient-coin-research-helper-misc/SKILL.md      # Research for other ancient coin series
+│   ├── ancient-coin-research-helper-roman/SKILL.md     # Roman coin research workflow
+│   ├── companion-catalog-enrichment/SKILL.md           # Visitor-facing enrichment workflow
+│   └── medieval-coin-research-helper/SKILL.md          # Medieval coin research workflow
+└── LICENSE                                             # MIT license
 ```
 
 The six coin-research skills are shared by both workflows. The `companion-catalog-enrichment` skill is for the enrichment project only. Each skill's instructions are in its `SKILL.md`.
